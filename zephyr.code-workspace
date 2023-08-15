@@ -1,5 +1,9 @@
 {
-	"folders": [
+	"folders": [		
+		{
+			"name": "samples",
+			"path": "../zephyr/samples"
+		},
 		{
 			"name": "00_hello_world",
 			"path": "00_hello_world"
@@ -13,6 +17,10 @@
 			"path": "02_key"
 		},
 		{
+			"name": "02_2_key_exit",
+			"path": "02_2_key_exit"
+		},
+		{
 			"name": "03_rtos",
 			"path": "03_rtos"
 		},
@@ -20,12 +28,13 @@
 			"name": "04_usb",
 			"path": "04_usb"
 		},
-		{
-			"name": "samples",
-			"path": "../zephyr/samples"
-		}
+
 	],
-	"settings": {},
+	"settings": {
+		"clangd.trace": "",
+		"clangd.checkUpdates": false,
+		"clangd.path": "/home/hyc/clangd/clangd_16.0.2/bin/clangd"
+	},
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [

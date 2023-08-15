@@ -57,7 +57,6 @@ int main(void)
         return -ENODEV;
     }
     gpio_pin_configure_dt(&key, GPIO_INPUT);
-    gpio_pin_get_dt(&key);
     gpio_init_callback(&callback, press_button, BIT(key.pin));
     gpio_add_callback_dt(&key, &callback);
     gpio_pin_interrupt_configure_dt(&key, GPIO_INT_EDGE_BOTH);

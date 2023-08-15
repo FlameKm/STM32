@@ -1,2 +1,0 @@
-ccache /home/hyc/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc libdrivers__clock_control.a CMakeFiles/drivers__clock_control.dir/clock_stm32_ll_common.c.obj CMakeFiles/drivers__clock_control.dir/clock_stm32f1.c.obj
-ccache /home/hyc/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib libdrivers__clock_control.a

@@ -1,2 +1,0 @@
-ccache /home/hyc/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc libdrivers__pinctrl.a CMakeFiles/drivers__pinctrl.dir/common.c.obj CMakeFiles/drivers__pinctrl.dir/pinctrl_stm32.c.obj
-ccache /home/hyc/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib libdrivers__pinctrl.a

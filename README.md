@@ -10,7 +10,7 @@ cmake -GNinja ..
 ninja
 ```
 ## 烧录
-
+方法1
 ```shell
 ninja flash
 ```
@@ -19,8 +19,15 @@ ninja flash
 方法2
 ```shell
 #窗口1
-openocd -f openocd -f openocd.cfg=
+openocd -f openocd.cfg
 #窗口2
 telnet localhost 4444
 program /home/hyc/zephyrproject/hyc/build/zephyr/zephyr.elf reset
 ```
+## 板子
+自定义的pedal，基本与stm32f103_mini板子相同
+
+- dts
+![Alt text](img/image-1.png)
+- openocd
+![Alt text](img/image-2.png)

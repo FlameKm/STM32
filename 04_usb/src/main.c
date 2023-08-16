@@ -5,7 +5,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include <stdint.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
@@ -35,10 +34,10 @@ static void press_button(const struct device *gpio, struct gpio_callback *cb, ui
             return;
         }
     }
-    if(gpio_pin_get_dt(&key) == 0){
+    if (gpio_pin_get_dt(&key) == 0) {
         report[2] = (uint8_t)(int8_t)-10;
     }
-    if(gpio_pin_get_dt(&key) == 1){
+    if (gpio_pin_get_dt(&key) == 1) {
         report[2] = 10;
     }
     LOG_INF("press_button");

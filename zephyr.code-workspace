@@ -1,8 +1,12 @@
 {
-	"folders": [		
+	"folders": [
 		{
 			"name": "samples",
 			"path": "../zephyr/samples"
+		},
+		{
+			"name": "f1",
+			"path": "../zephyr/dts/arm/st/f1"
 		},
 		{
 			"name": "00_hello_world",
@@ -28,7 +32,10 @@
 			"name": "04_usb",
 			"path": "04_usb"
 		},
-
+		{
+			"name": "05_adc",
+			"path": "05_adc"
+		}
 	],
 	"settings": {
 		"clangd.trace": "",
@@ -38,7 +45,20 @@
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
-		
+			{
+				"cwd": "${workspaceFolder:04_usb}",   // 当前调试的文件名
+				"executable": "./build/zephyr/zephyr.elf",
+				"name": "Debug with OpenOCD",
+				"request": "launch",
+				"type": "cortex-debug",
+				"servertype": "openocd",
+				"gdbPath": "/home/hyc/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+				"armToolchainPath": "/home/hyc/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin",
+				"configFiles": ["openocd.cfg"],
+				"searchDir": ["/home/hyc/zephyrproject/hyc/"],
+				"runToEntryPoint": "main",
+				"showDevDebugOutput": "none"
+			},
 		]
 	}
 }

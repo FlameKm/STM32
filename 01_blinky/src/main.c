@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include "stm32f1xx_hal.h"
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
 
@@ -23,7 +22,6 @@ static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
 int main(void)
 {
 	int ret;
-	HAL_Init();
 	if (!gpio_is_ready_dt(&led)) {
 		return 0;
 	}
@@ -38,7 +36,7 @@ int main(void)
 		if (ret < 0) {
 			return 0;
 		}
-		HAL_Delay(200);
+		k_msleep(200);
 	}
 	return 0;
 }

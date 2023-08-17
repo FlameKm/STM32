@@ -30,7 +30,7 @@ int main(void)
 {
     uint32_t count = 0;
     int err;
-    uint16_t buf;
+    uint16_t buf; // ?多个缓冲的话，还不知道如何使用
     struct adc_sequence sequence = {
         .buffer = &buf,
         /* buffer size in bytes, not number of samples */

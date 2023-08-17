@@ -2,19 +2,19 @@
 	"folders": [
 		{
 			"name": "samples",
-			"path": "../zephyr/samples"
+			"path": "/home/zephyrproject/zephyr/samples"
 		},
 		{
-			"name": "f1",
-			"path": "../zephyr/dts/arm/st/f1"
+			"name": "dts",
+			"path": "/home/zephyrproject/zephyr/dts"
 		},
 		{
 			"name": "00_hello_world",
 			"path": "00_hello_world"
 		},
 		{
-			"name": "01_blinky",
-			"path": "01_blinky"
+			"name": "01_gpio",
+			"path": "01_gpio"
 		},
 		{
 			"name": "02_key",
@@ -35,6 +35,10 @@
 		{
 			"name": "05_adc",
 			"path": "05_adc"
+		},
+		{
+			"name": "06_pwm",
+			"path": "06_pwm"
 		}
 	],
 	"settings": {
@@ -46,7 +50,7 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"cwd": "${workspaceFolder:04_usb}",   // 当前调试的文件名
+				"cwd": "${workspaceFolder:05_adc}",   // 当前调试的文件名
 				"executable": "./build/zephyr/zephyr.elf",
 				"name": "Debug with OpenOCD",
 				"request": "launch",

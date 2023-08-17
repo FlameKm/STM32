@@ -2,11 +2,11 @@
 	"folders": [
 		{
 			"name": "samples",
-			"path": "/home/zephyrproject/zephyr/samples"
+			"path": "../zephyr/samples"
 		},
 		{
 			"name": "dts",
-			"path": "/home/zephyrproject/zephyr/dts"
+			"path": "../zephyr/dts"
 		},
 		{
 			"name": "00_hello_world",
@@ -42,7 +42,6 @@
 		}
 	],
 	"settings": {
-		"clangd.trace": "",
 		"clangd.checkUpdates": false,
 		"clangd.path": "/home/hyc/clangd/clangd_16.0.2/bin/clangd"
 	},

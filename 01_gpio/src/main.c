@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include "zephyr/sys/printk.h"
+#include "zephyr/sys/util.h"
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
-
-
 
 
 /* // *方法一 用宏枚举法
@@ -19,23 +19,23 @@ static const struct gpio_dt_spec led[] = {
 // *方法二 手动添加
 static const struct gpio_dt_spec led[] = {
     GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios),
-    GPIO_DT_SPEC_GET(DT_ALIAS(led1), gpios),
-    GPIO_DT_SPEC_GET(DT_NODELABEL(yellow_led), gpios),
+    GPIO_DT_SPEC_GET_BY_IDX(DT_ALIAS(led12), gpios, 0),
+    GPIO_DT_SPEC_GET_BY_IDX(DT_ALIAS(led12), gpios, 1),
 };
-
+/* 
+ */
 int main(void)
 {
     int ret;
-    uint8_t len = ARRAY_SIZE(led);
+    int len = ARRAY_SIZE(led);
     // confirm ready
-    for (int i = 0; i < len, i++) {
-        if (!gpio_is_ready_dt(&led[i])))
-            {
-                return 0;
-            }
+    for (int i = 0; i < len; i++) {
+        if (!gpio_is_ready_dt(&led[i])) {
+            return 0;
+        }
     }
     // confirm direction
-    for (int i = 0; i < len, i++) {
+    for (int i = 0; i < len; i++) {
         ret = gpio_pin_configure_dt(&led[i], GPIO_OUTPUT_ACTIVE);
         if (ret < 0) {
             return 0;
@@ -44,16 +44,18 @@ int main(void)
 
     while (1) {
         // control led
-       err =  gpio_pin_toggle_dt(&led[0]);
+        ret = gpio_pin_toggle_dt(&led[0]);
         if (ret < 0) {
-			printk("Failed to led flip\n");
+            printk("Failed to led flip\n");
             return 0;
         }
-		err = gpio_pin_w
+        // keep the opposite of led0
+        ret = gpio_pin_set_dt(&led[1], gpio_pin_get_dt(&led[0]));
         if (ret < 0) {
-			printk("Failed to led flip\n");
+            printk("Failed to led flip\n");
             return 0;
-        }		
+        }
+
         k_msleep(200);
     }
     return 0;

@@ -1,32 +1,20 @@
 
 / {
-	zephyr,user {
-		io-channels = <&gpio 1>, <&gpio 2>, <&gpio 3>;
-	};
+
 
 	gpio {
-		/* 自己写的所以偷懒忽略 */
-		/* compatible = "gpio-leds"; */
-
-		status = "okay";
+		compatible = "gpio-leds"; 
 		red_led: led_1{
-			reg = <1>;
 			gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
 		};
 		green_led: led_2{
-			reg = <2>;
-			gpios = <&gpioa 0 GPIO_ACTIVE_LOW>;
-		};
-		yellow_led: led_3{
-			reg = <3>;
-			gpios = <&gpioa 2 GPIO_ACTIVE_LOW>;
+			gpios = <&gpioa 0 GPIO_ACTIVE_LOW>, <&gpioa 2 GPIO_ACTIVE_LOW>;
 		};
 	};
 
 	aliases {
 		led0 = &red_led;
-		led1 = &green_led;
-		led2 = &yellow_led;
+		led12 = &green_led;
 	};
 };
 

@@ -23,9 +23,7 @@ const struct pwm_dt_spec spec[] = {
 
 int main(void)
 {
-    uint8_t ret;
     uint32_t max_period;
-    uint32_t period;
     // Print pwm information
     for (int i = 0; i < ARRAY_SIZE(spec); i++) {
         if (!device_is_ready(spec[i].dev)) {
@@ -40,18 +38,18 @@ int main(void)
                spec[i].period,
                spec[i].flags);
     }
-/*     max_period = PWM_SEC(1U);
+    max_period = PWM_SEC(1U);
     while (pwm_set_dt(&spec[0], max_period, max_period / 2U)) {
         max_period /= 2U;
         if (max_period < (500)) {
             printk("Error: PWM device "
                    "does not support a period at least %lu\n",
-                   500);
+                   500LU);
             return 0;
         }
     }
 	printk("Done calibrating; maximum/minimum periods %u/%lu nsec\n",
-	       max_period, 500U); */
+	       max_period, 100LU);
     while (1) {
         pwm_set_dt(&spec[0], 2000, 1500);
         pwm_set_dt(&spec[1], 2000, 500);

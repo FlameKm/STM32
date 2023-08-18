@@ -8,7 +8,7 @@
 			gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
 		};
 		green_led: led_2{
-			gpios = <&gpioa 0 GPIO_ACTIVE_LOW>, <&gpioa 2 GPIO_ACTIVE_LOW>;
+			gpios = <&gpioa 6 GPIO_ACTIVE_LOW>, <&gpioa 7 GPIO_ACTIVE_LOW>;
 		};
 	};
 

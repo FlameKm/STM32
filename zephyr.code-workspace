@@ -1,12 +1,8 @@
 {
 	"folders": [
 		{
-			"name": "samples",
-			"path": "../zephyr/samples"
-		},
-		{
-			"name": "dts",
-			"path": "../zephyr/dts"
+			"name": "zephyr",
+			"path": "../zephyr"
 		},
 		{
 			"name": "00_hello_world",
@@ -39,6 +35,9 @@
 		{
 			"name": "06_pwm",
 			"path": "06_pwm"
+		},
+		{
+			"path": "07_uart"
 		}
 	],
 	"settings": {
@@ -49,7 +48,7 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"cwd": "${workspaceFolder:05_adc}",   // 当前调试的文件名
+				"cwd": "${workspaceFolder:01_gpio}",   // 当前调试的文件名
 				"executable": "./build/zephyr/zephyr.elf",
 				"name": "Debug with OpenOCD",
 				"request": "launch",

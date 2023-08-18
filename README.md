@@ -1,4 +1,6 @@
 # Zephyr的学习代码
+## Zephyr设备树结构图
+![Alt text](img/Zephyr-DeviceTree-Struct.png)
 ## 环境
 linux： zephyr
 
@@ -31,3 +33,4 @@ program /home/hyc/zephyrproject/hyc/build/zephyr/zephyr.elf reset
 ![Alt text](img/image-1.png)
 - openocd
 ![Alt text](img/image-2.png)
+

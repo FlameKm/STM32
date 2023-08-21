@@ -38,6 +38,9 @@
 		},
 		{
 			"path": "07_uart"
+		},
+		{
+			"path": "08_custom_binding"
 		}
 	],
 	"settings": {
@@ -48,7 +51,7 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"cwd": "${workspaceFolder:01_gpio}",   // 当前调试的文件名
+				"cwd": "${workspaceFolder:02_key}",   // 当前调试的文件名
 				"executable": "./build/zephyr/zephyr.elf",
 				"name": "Debug with OpenOCD",
 				"request": "launch",

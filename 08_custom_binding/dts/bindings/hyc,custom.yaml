@@ -1,0 +1,18 @@
+description: hyc's custom test.
+
+compatible: "hyc,custom"
+properties:
+  pwms:
+    required: true
+    type: phandle-array
+    description: pwms
+
+  min-pulse:
+    required: false
+    type: int
+    description: min-pulse
+
+  max-pulse:
+    required: false
+    type: int
+    description: max-pulse

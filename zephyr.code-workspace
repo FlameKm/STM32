@@ -5,6 +5,10 @@
 			"path": "../zephyr"
 		},
 		{
+			"name": "modules",
+			"path": "../modules"
+		},
+		{
 			"name": "00_hello_world",
 			"path": "00_hello_world"
 		},
@@ -51,6 +55,10 @@
 		{
 			"name": "11_key_exit",
 			"path": "11_key_exit"
+		},
+		{
+			"name": "12_stm32_hal",
+			"path": "12_stm32_hal"
 		}
 	],
 	"settings": {
@@ -61,7 +69,7 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"cwd": "${workspaceFolder:02_key}",   // 当前调试的文件名
+				"cwd": "${workspaceFolder:12_stm32_hal}",   // 当前调试的文件名
 				"executable": "./build/zephyr/zephyr.elf",
 				"name": "Debug with OpenOCD",
 				"request": "launch",

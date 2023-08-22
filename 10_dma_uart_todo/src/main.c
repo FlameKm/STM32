@@ -3,7 +3,10 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-
+/* !!!!!!
+*   This demo is not available
+*
+ */
 #include "stm32f103xb.h"
 #include "zephyr/sys/util.h"
 #include <stdint.h>
@@ -43,11 +46,11 @@ int main(void)
         .block_size = sizeof(src_data),
         .source_address = (uint32_t)src_data,
         .source_addr_adj = DMA_ADDR_ADJ_INCREMENT,
-        .dest_address = (uint32_t)USART1->DR,
+        .dest_address = (uint32_t)&USART1->DR,
         .dest_addr_adj = DMA_ADDR_ADJ_NO_CHANGE,
     };
     struct dma_config cfg = {
-        .dma_slot = 2,
+        .dma_slot = 5,
         .channel_direction = MEMORY_TO_PERIPHERAL,
         .dest_handshake = 0,
         .source_handshake = 0,
@@ -62,7 +65,7 @@ int main(void)
         .head_block = &block_cfg,
         .complete_callback_en = 0,
     };
-
+    
     ret = dma_config(dma_dev, DMA_CHANNEL, &cfg);
     if (ret < 0) {
         printk("Failed to configure DMA channel\n");
@@ -81,4 +84,3 @@ int main(void)
     }
     return 0;
 }
-// west build -p always hello_world */

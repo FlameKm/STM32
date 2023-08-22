@@ -17,13 +17,16 @@
 int main(void)
 {
     int err;
-    const struct device *uart = DEVICE_DT_GET(DT_PATH(soc, serial_40013800));
+    // const struct device *uart = DEVICE_DT_GET(DT_PATH(soc, serial_40013800));
+    const struct device *uart = DEVICE_DT_GET(DT_NODELABEL(usart1));
     
     err = device_is_ready(uart);
-    if(err < 0){
+    if (err < 0) {
         return 0;
     }
 
+    printk("this function is invalid, so not show this messge");
+    
     while (1) {
         uart_poll_out(uart, 'c');
         k_msleep(1000);

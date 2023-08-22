@@ -17,10 +17,6 @@
 			"path": "02_key"
 		},
 		{
-			"name": "02_2_key_exit",
-			"path": "02_2_key_exit"
-		},
-		{
 			"name": "03_rtos",
 			"path": "03_rtos"
 		},
@@ -37,10 +33,24 @@
 			"path": "06_pwm"
 		},
 		{
+			"name": "07_uart",
 			"path": "07_uart"
 		},
 		{
+			"name": "08_custom_binding",
 			"path": "08_custom_binding"
+		},
+		{
+			"name": "09_dma",
+			"path": "09_dma"
+		},
+		{
+			"name": "10_dma_uart",
+			"path": "10_dma_uart_todo"
+		},
+		{
+			"name": "11_key_exit",
+			"path": "11_key_exit"
 		}
 	],
 	"settings": {

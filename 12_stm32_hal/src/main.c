@@ -28,7 +28,7 @@ void uart_hal()
 
 /*     HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
-    HAL_UART_Transmit_DMA(&huart1, (uint8_t *)"hello dma\n", 9); // !很遗憾没有实现
+    HAL_UART_Transmit_DMA(&huart1, (uint8_t *)"hello dma\n", 9); // !很遗憾还是没有实现
     k_msleep(20); */
 }
 int main(void)

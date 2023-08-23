@@ -9,10 +9,10 @@
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
 
+// 通过某个绑定结构获取，但是没有使用led0的库，直接操作系统提供的api——gpio
 static const struct gpio_dt_spec led[] = {
     GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios),
-    GPIO_DT_SPEC_GET_BY_IDX(DT_PATH(gpio, led_2), gpios, 0),
-    GPIO_DT_SPEC_GET_BY_IDX(DT_ALIAS(led12), gpios, 1),
+    GPIO_DT_SPEC_GET(DT_ALIAS(led1), gpios),
 };
 /* 
  */
@@ -23,30 +23,28 @@ int main(void)
     // confirm ready
     for (int i = 0; i < len; i++) {
         if (!gpio_is_ready_dt(&led[i])) {
-            return 0;
+            return -1;
         }
     }
     // confirm direction
     for (int i = 0; i < len; i++) {
         ret = gpio_pin_configure_dt(&led[i], GPIO_OUTPUT_ACTIVE);
         if (ret < 0) {
-            return 0;
+            return -1;
         }
     }
-
+    printk("hello world\n");
     while (1) {
         // control led
-        ret = gpio_pin_toggle_dt(&led[1]);
+        ret = 0;
+        ret |= gpio_pin_toggle_dt(&led[0]);
+        ret |= gpio_pin_toggle_dt(&led[1]);
         if (ret < 0) {
             printk("Failed to led flip\n");
-            return 0;
+            return -1;
         }
         // keep the opposite of led0
-        ret = gpio_pin_set_dt(&led[2], !gpio_pin_get_dt(&led[1])); //这里可能出现无法获取当前状态
-        if (ret < 0) {
-            printk("Failed to led flip\n");
-            return 0;
-        }
+
 
         k_msleep(1000);
     }

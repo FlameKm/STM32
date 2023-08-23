@@ -1,7 +1,5 @@
 
 / {
-
-
 	gpio {
 		compatible = "gpio-leds"; 
 		red_led: led_1{

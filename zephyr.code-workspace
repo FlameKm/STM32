@@ -59,6 +59,12 @@
 		{
 			"name": "12_stm32_hal",
 			"path": "12_stm32_hal"
+		},
+		{
+			"path": "13_nrf_hello_world"
+		},
+		{
+			"path": "14_nrf_gpio"
 		}
 	],
 	"settings": {

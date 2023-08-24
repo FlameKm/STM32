@@ -1,10 +1,11 @@
 
 
-&usart1 {
-    current-speed = <115200>;
+&dma1{
     status = "okay";
 };
 
-&dma1 {
-    status = "okay";
+&usart1 {
+    dmas = <&dma1 4 STM32_DMA_PERIPH_TX>,
+           <&dma1 5 STM32_DMA_PERIPH_RX>;
+    dma-names = "tx", "rx";
 };

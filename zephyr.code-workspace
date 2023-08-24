@@ -2,11 +2,11 @@
 	"folders": [
 		{
 			"name": "zephyr",
-			"path": "../zephyr"
+			"path": "/home/hyc/zephyrproject/zephyr"
 		},
 		{
 			"name": "modules",
-			"path": "../modules"
+			"path": "/home/hyc/zephyrproject/modules"
 		},
 		{
 			"name": "00_hello_world",
@@ -72,7 +72,8 @@
 	],
 	"settings": {
 		"clangd.checkUpdates": false,
-		"clangd.path": "/home/hyc/clangd/clangd_16.0.2/bin/clangd"
+		"clangd.path": "/home/hyc/clangd/clangd_16.0.2/bin/clangd",
+		"nrf-connect.toolchain.path": "PATH"
 	},
 	"launch": {
 		"version": "0.2.0",

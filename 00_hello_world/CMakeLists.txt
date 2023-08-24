@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: Apache-2.0
 
 cmake_minimum_required(VERSION 3.20.0)
-# set(BOARD pedal)
-set(BOARD nrf5340dk_nrf5340_cpuapp)
+set(BOARD pedal)
+# set(BOARD nrf5340dk_nrf5340_cpuapp)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 
 project(hello_world)

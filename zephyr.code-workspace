@@ -68,6 +68,9 @@
 		},
 		{
 			"path": "15_nrf_key"
+		},
+		{
+			"path": "16_nrf_bluetooth_mouse"
 		}
 	],
 	"settings": {

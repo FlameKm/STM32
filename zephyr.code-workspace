@@ -70,7 +70,7 @@
 			"path": "15_nrf_key"
 		},
 		{
-			"path": "16_nrf_bluetooth_mouse"
+			"path": "16_nrf_bluetooth_peripheral_hids_mouse"
 		}
 	],
 	"settings": {

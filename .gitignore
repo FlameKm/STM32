@@ -1,4 +1,4 @@
-/build/
-/*/build/
-/.cache/
-/*/.cache/
+build/
+.cache/
+.vscode/
+.idea/

@@ -1,0 +1,18 @@
+
+/ {
+	gpio {
+		compatible = "gpio-leds"; 
+		red_led: led_1{
+			gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
+		};
+		green_led: led_2{
+			gpios = <&gpioa 6 GPIO_ACTIVE_LOW>, <&gpioa 7 GPIO_ACTIVE_LOW>;
+		};
+	};
+
+	aliases {
+		led0 = &red_led;
+		led12 = &green_led;
+	};
+};
+

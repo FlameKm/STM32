@@ -1,0 +1,6 @@
+&usart1 {
+    current-speed = <115200>;
+};
+&pinctrl {
+    swj-cfg = "jtag-disable";
+};

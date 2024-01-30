@@ -1,0 +1,26 @@
+
+/ {
+	motor{
+		compatible = "pwm-leds";
+		status = "okay";
+		contrl: contrl{
+			pwms = <&pwm_motor 1 2000 PWM_POLARITY_NORMAL>,
+				   <&pwm_motor 2 2000 PWM_POLARITY_NORMAL>;
+		};
+	};
+	aliases {
+		acontrl = &contrl;
+	};
+};
+
+&pwm1{
+    status = "disabled";
+};
+
+&timers3 {
+	pwm_motor: pwm{
+		status = "okay";
+		pinctrl-0 = <&tim3_ch1_pwm_out_pa6>, <&tim3_ch2_pwm_out_pa7>;
+		pinctrl-names = "default";
+	};
+};

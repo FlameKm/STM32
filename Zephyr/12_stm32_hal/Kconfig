@@ -1,0 +1,9 @@
+source "Kconfig.zephyr"
+config APP_WITH_STM32_HAL
+  default y
+  bool
+  select USE_STM32_HAL_GPIO
+  select USE_STM32_HAL_UART
+  select USE_STM32_HAL_DMA
+  select USE_STM32_HAL_NVIC
+  select USE_STM32_HAL_CORTEX

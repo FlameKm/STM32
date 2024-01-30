@@ -1,0 +1,100 @@
+{
+	"folders": [
+		{
+			"name": "zephyr",
+			"path": "/home/hyc/zephyrproject/zephyr"
+		},
+		{
+			"name": "modules",
+			"path": "/home/hyc/zephyrproject/modules"
+		},
+		{
+			"name": "00_hello_world",
+			"path": "00_hello_world"
+		},
+		{
+			"name": "01_gpio",
+			"path": "01_gpio"
+		},
+		{
+			"name": "02_key",
+			"path": "02_key"
+		},
+		{
+			"name": "03_rtos",
+			"path": "03_rtos"
+		},
+		{
+			"name": "04_usb",
+			"path": "04_usb"
+		},
+		{
+			"name": "05_adc",
+			"path": "05_adc"
+		},
+		{
+			"name": "06_pwm",
+			"path": "06_pwm"
+		},
+		{
+			"name": "07_uart",
+			"path": "07_uart"
+		},
+		{
+			"name": "08_custom_binding",
+			"path": "08_custom_binding"
+		},
+		{
+			"name": "09_dma",
+			"path": "09_dma"
+		},
+		{
+			"name": "10_dma_uart",
+			"path": "10_dma_uart_todo"
+		},
+		{
+			"name": "11_key_exit",
+			"path": "11_key_exit"
+		},
+		{
+			"name": "12_stm32_hal",
+			"path": "12_stm32_hal"
+		},
+		{
+			"path": "13_nrf_hello_world"
+		},
+		{
+			"path": "14_nrf_gpio"
+		},
+		{
+			"path": "15_nrf_key"
+		},
+		{
+			"path": "16_nrf_bluetooth_peripheral_hids_mouse"
+		}
+	],
+	"settings": {
+		"clangd.checkUpdates": false,
+		"clangd.path": "/home/hyc/clangd/clangd_16.0.2/bin/clangd",
+		"nrf-connect.toolchain.path": "PATH"
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"cwd": "${workspaceFolder:12_stm32_hal}",   // 当前调试的文件名
+				"executable": "./build/zephyr/zephyr.elf",
+				"name": "Debug with OpenOCD",
+				"request": "launch",
+				"type": "cortex-debug",
+				"servertype": "openocd",
+				"gdbPath": "/home/hyc/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+				"armToolchainPath": "/home/hyc/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin",
+				"configFiles": ["openocd.cfg"],
+				"searchDir": ["/home/hyc/zephyrproject/hyc/"],
+				"runToEntryPoint": "main",
+				"showDevDebugOutput": "none"
+			},
+		]
+	}
+}

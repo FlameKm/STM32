@@ -1,0 +1,17 @@
+
+/ {
+    my_custom: custom{
+        compatible = "hyc,custom";
+        pwms = <&pwm_motor 1 2000 PWM_POLARITY_NORMAL>;
+        min-pulse = <500>;
+        max-pulse = <1800>;
+    };
+};
+
+&timers3 {
+	pwm_motor: pwm{
+		status = "okay";
+		pinctrl-0 = <&tim3_ch1_pwm_out_pa6>;
+		pinctrl-names = "default";
+	};
+};
